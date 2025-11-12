@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EPFL Maths Rapidité</title>
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        epflRed: '#E2001A',
+                        epflBlack: '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-epflBlack text-white flex flex-col items-center justify-center h-screen font-sans">
+
+    <!-- Title -->
+    <h1 class="text-4xl font-bold text-epflRed mb-2">EPFL Maths Rapidité</h1>
+
+    <!-- Timer setting -->
+    
+    <!-- Menu -->
+    <div id="menu" class="flex flex-col items-center space-y-6">
+        <div class="flex flex-col items-center mt-2">
+            <label for="timer-setting" class="text-lg mb-1">Timer (secondes)</label>
+            <input id="timer-setting" type="number" min="10" max="120" value="30"
+            class="text-center p-2 rounded text-epflBlack" />
+        </div>
+        <div class="space-x-4">
+            <button class="difficulty bg-epflRed hover:bg-red-700 px-4 py-2 rounded" data-level="easy">Facile</button>
+            <button class="difficulty bg-epflRed hover:bg-red-700 px-4 py-2 rounded" data-level="medium">Moyen</button>
+            <button class="difficulty bg-epflRed hover:bg-red-700 px-4 py-2 rounded"
+                data-level="hard">Difficile</button>
+        </div>
+
+        <div id="scoreboard" class="mt-6 hidden">
+            <h3 class="text-2xl text-epflRed mb-2 font-semibold">Derniers scores</h3>
+            <ul id="score-list" class="space-y-1 text-lg text-center"></ul>
+        </div>
+    
+    </div>
+
+    <!-- Game Area -->
+    <div id="game" class="hidden relative w-full h-full overflow-hidden">
+        <div id="score" class="absolute top-4 left-4 text-xl">Score: 0</div>
+        <div id="timer" class="absolute top-4 right-4 text-xl">Temps: 30</div>
+        <input id="answer" type="number" placeholder="Type answer..."
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-48 p-2 text-black rounded" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

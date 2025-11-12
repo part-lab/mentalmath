@@ -1,0 +1,24 @@
+.falling {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fall linear forwards;
+}
+
+.current {
+  /* color: #E2001A; */
+  font-weight: 600;
+  border-bottom: 3px solid #E2001A;
+  padding-bottom: 2px;
+}
+
+@keyframes fall {
+  from { top: 0; }
+  to { top: 90%; }
+}
+
+.op-plus { color: #4ade80; }   /* greenish */
+.op-minus { color: #60a5fa; }  /* blue */
+.op-mul { color: #facc15; }    /* yellow */
+.op-div { color: #a855f7; }    /* purple */
